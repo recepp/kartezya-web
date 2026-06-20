@@ -264,13 +264,18 @@ button {
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    justify-content: space-between;
     width: 30px;
+    height: 20px;
     background: none;
     border: none;
+    cursor: pointer;
+    z-index: 1010;
+    padding: 0;
 }
 
 .mobile-menu-toggle span {
+    display: block;
     width: 100%;
     height: 2px;
     background-color: var(--color-text-main);
@@ -627,6 +632,141 @@ button {
 @keyframes ticker-animation {
     0% { transform: translate3d(0, 0, 0); }
     100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --- Top Features Section --- */
+.top-features-section {
+    padding: 60px 0;
+    margin-top: -80px; /* overlay slightly on slider */
+    position: relative;
+    z-index: 10;
+}
+
+.top-features-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.top-feature-card {
+    background: rgba(18, 21, 38, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 30px 20px;
+    transition: var(--transition-smooth);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-feature-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    background: var(--color-bg-card-hover);
+    box-shadow: 0 10px 25px rgba(7, 110, 244, 0.15);
+}
+
+.top-feature-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--border-radius-sm);
+    background: rgba(7, 110, 244, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    transition: var(--transition-smooth);
+}
+
+.top-feature-card:hover .top-feature-icon {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.top-feature-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.top-feature-card p {
+    font-size: 13px;
+    color: var(--color-text-body);
+    line-height: 1.5;
+}
+
+/* --- Best Technology Solution Section --- */
+.best-tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.best-tech-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-tech-img-wrapper {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+}
+
+.best-tech-img {
+    width: 100%;
+    height: auto;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 5s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.best-tech-subfeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 35px;
+}
+
+.best-tech-subfeature {
+    display: flex;
+    gap: 16px;
+}
+
+.subfeature-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(130, 54, 251, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+}
+
+.best-tech-subfeature h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.best-tech-subfeature p {
+    font-size: 13px;
+    color: var(--color-text-body);
+    line-height: 1.4;
 }
 
 /* --- Work Process Section --- */
@@ -1506,6 +1646,18 @@ textarea.form-control {
     .slide-title {
         font-size: 40px;
     }
+    .top-features-section {
+        margin-top: 0;
+        padding: 40px 0;
+    }
+    .top-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .best-tech-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1542,5 +1694,12 @@ textarea.form-control {
     }
     .ticker-item img {
         height: 90px;
+    }
+    .top-features-grid {
+        grid-template-columns: 1fr;
+    }
+    .best-tech-subfeatures {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
