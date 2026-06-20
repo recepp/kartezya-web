@@ -642,7 +642,7 @@ button {
 /* --- Top Features Section --- */
 .top-features-section {
     padding: 60px 0;
-    margin-top: -80px; /* overlay slightly on slider */
+    margin-top: 40px; /* added space below slider */
     position: relative;
     z-index: 10;
 }
@@ -666,7 +666,7 @@ button {
 }
 
 .top-feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px); /* lifted higher for more motion */
 }
 
 .top-feature-icon {
@@ -683,10 +683,19 @@ button {
     transition: var(--transition-smooth);
 }
 
+.top-feature-icon svg {
+    transition: var(--transition-smooth);
+}
+
 .top-feature-card:hover .top-feature-icon {
     background: var(--color-gradient-primary);
     border-color: transparent;
     color: #FFFFFF;
+    box-shadow: 0 8px 20px rgba(7, 110, 244, 0.4); /* glowing effect */
+}
+
+.top-feature-card:hover .top-feature-icon svg {
+    transform: scale(1.15) rotate(8deg); /* micro-interaction motion */
 }
 
 .top-feature-card h3 {
