@@ -624,7 +624,7 @@ button {
 }
 
 .ticker-item img {
-    height: 135px;
+    height: 180px;
     opacity: 0.75;
     transition: var(--transition-smooth);
 }
@@ -1627,7 +1627,7 @@ textarea.form-control {
         padding: 140px 0 80px 0;
     }
     .ticker-item img {
-        height: 110px;
+        height: 145px;
     }
     .intro-grid {
         grid-template-columns: 1fr;
@@ -1707,7 +1707,7 @@ textarea.form-control {
         text-align: center;
     }
     .ticker-item img {
-        height: 90px;
+        height: 115px;
     }
     .top-features-grid {
         grid-template-columns: 1fr;
