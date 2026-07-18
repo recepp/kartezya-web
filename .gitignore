@@ -1,6 +1,21 @@
-# Scratch files
-scratch/
+# Go build çıktıları
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/vendor/
+/dist/
 
-# OS files
+# OS dosyaları
 .DS_Store
 Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Scratch
+scratch/
