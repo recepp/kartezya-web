@@ -856,6 +856,35 @@ button {
 }
 
 /* --- Portfolio Grid --- */
+.portfolio-group {
+    margin-bottom: 50px;
+}
+
+.portfolio-group:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-group-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-text-title);
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-group-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1648,6 +1677,22 @@ textarea.form-control {
     }
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolio-overlay {
+        opacity: 1;
+        background: linear-gradient(0deg, rgba(11, 13, 23, 0.95) 0%, rgba(11, 13, 23, 0.6) 50%, rgba(11, 13, 23, 0.1) 100%);
+        padding: 20px;
+    }
+    .portfolio-title {
+        font-size: 18px;
+    }
+    .portfolio-cat {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+    .portfolio-group-title {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
     .footer-grid {
         grid-template-columns: 1fr;
