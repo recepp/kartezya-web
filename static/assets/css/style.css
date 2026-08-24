@@ -856,35 +856,6 @@ button {
 }
 
 /* --- Portfolio Grid --- */
-.portfolio-group {
-    margin-bottom: 50px;
-}
-
-.portfolio-group:last-child {
-    margin-bottom: 0;
-}
-
-.portfolio-group-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--color-text-title);
-    margin-bottom: 24px;
-    position: relative;
-    padding-left: 20px;
-    letter-spacing: 0.5px;
-}
-
-.portfolio-group-title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 6px;
-    bottom: 6px;
-    width: 4px;
-    background: var(--color-primary);
-    border-radius: 2px;
-}
-
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -892,11 +863,28 @@ button {
 }
 
 .portfolio-card {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: var(--border-radius-md);
     overflow: hidden;
     background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-smooth);
+    height: 100%;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-hover);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    background: var(--color-bg-card-hover);
+}
+
+.portfolio-img-container {
+    position: relative;
+    width: 100%;
     aspect-ratio: 16/10;
+    overflow: hidden;
 }
 
 .portfolio-card img {
@@ -906,27 +894,15 @@ button {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(11, 13, 23, 0.95) 0%, rgba(11, 13, 23, 0.4) 100%);
-    opacity: 0;
-    transition: var(--transition-smooth);
+.portfolio-card:hover img {
+    transform: scale(1.06);
+}
+
+.portfolio-info {
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-}
-
-.portfolio-card:hover img {
-    transform: scale(1.1);
-}
-
-.portfolio-card:hover .portfolio-overlay {
-    opacity: 1;
+    flex-grow: 1;
 }
 
 .portfolio-cat {
@@ -939,9 +915,15 @@ button {
 }
 
 .portfolio-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #FFFFFF;
+    line-height: 1.4;
+    transition: var(--transition-smooth);
+}
+
+.portfolio-card:hover .portfolio-title {
+    color: var(--color-primary);
 }
 
 /* --- Testimonials --- */
@@ -1677,22 +1659,17 @@ textarea.form-control {
     }
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
-    .portfolio-overlay {
-        opacity: 1;
-        background: linear-gradient(0deg, rgba(11, 13, 23, 0.95) 0%, rgba(11, 13, 23, 0.6) 50%, rgba(11, 13, 23, 0.1) 100%);
+    .portfolio-info {
         padding: 20px;
     }
     .portfolio-title {
-        font-size: 18px;
+        font-size: 16px;
     }
     .portfolio-cat {
         font-size: 11px;
         margin-bottom: 6px;
-    }
-    .portfolio-group-title {
-        font-size: 20px;
-        margin-bottom: 20px;
     }
     .footer-grid {
         grid-template-columns: 1fr;
